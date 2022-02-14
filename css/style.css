@@ -20,7 +20,7 @@
 }
 aside{
   width: 35%;
-  background-color: rgb(168, 165, 165);
+  background-color: rgb(250, 250, 250);
 }
 aside img{
   width: 50px;
@@ -50,18 +50,47 @@ aside img{
 }
 .active-notification{
   height: 80px;
-  background-color: royalblue;
+  align-items: center;
+  background-color: rgb(142,	218,	252);
+  padding-left: 20px;
 }
 .notification{
-  background-color: gray;
+  background-color: #fff;
   display: inline-block;
   border-radius: 50%;
-  padding: 10px;
+  padding: 12px 9px;
 }
 .notification i{
-  font-size: 30px;
+  font-size: 25px;
+  color: rgb(142,	218,	252);
 }
-
+.text-notification span{
+  display: block;
+  font-size: 16px;
+  margin-left: 10px
+}
+.link-active{
+  color: rgb(160, 160, 160);
+  text-decoration: underline;
+}
+.searchbar{
+  width: 90%;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+}
+.searchbar input{
+  width: 100%;
+  border: none;
+  height: 40px;
+  padding: 5px;
+}
+.searchbar i{
+  padding: 10px 10px;
+  line-height: 20px;
+  background-color: #fff;
+  color: rgb(160, 160, 160);
+}
 main{
   width: 75%;
   background-color: firebrick ;
