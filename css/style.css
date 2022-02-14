@@ -109,12 +109,16 @@ aside img{
   border-top: 1px solid rgb(244, 243, 243);
   border-right: 1px solid rgb(244, 243, 243);
   background-color: #fff;
+  height: calc(100% - 208px);
 } 
 .contacts img{
   margin-left: 25px;
 }
 .user-contact{
   position: relative;
+}
+.user-contact:hover{
+  background-color:rgb(226, 226, 226);
 }
 .user-contact .data{
   font-size: 10px;
@@ -170,9 +174,10 @@ main{
 .received-message{
   display: inline-block;
   border-radius: 10px;
-  padding: 10px;
+  padding: 12px;
   position: relative;
   max-width: 50%;
+  word-break: break-word;
 }
 .sent-message{
   background-color: rgb(213, 249,	185);
