@@ -1,0 +1,68 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+}
+#app{
+  height: 100vh;
+  background: rgb(204,209,207);
+  background: linear-gradient(0deg, rgba(204,209,207,1) 85%, rgba(26,150,135,1) 85%);
+}
+.container{
+  width: 80%;
+  min-width: 400px;
+  height: 90%;
+  margin: auto;
+  background-color: green ;
+}
+aside{
+  width: 35%;
+  background-color: rgb(168, 165, 165);
+}
+aside img{
+  width: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.user{
+  background-color: rgb(234, 234,	234);
+  align-items: center;
+  justify-content: space-between;
+}
+.name-user{
+  align-items: center;
+}
+.name-user span{
+  font-size: 15px;
+  font-weight: bold;
+}
+.tools-user{
+  width: 35%;
+  justify-content: space-around;
+}
+.tools-user i{
+ font-size: 25px;
+ margin-right: 5%;
+ color: rgb(178,	177,	177);
+}
+.active-notification{
+  height: 80px;
+  background-color: royalblue;
+}
+.notification{
+  background-color: gray;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 10px;
+}
+.notification i{
+  font-size: 30px;
+}
+
+main{
+  width: 75%;
+  background-color: firebrick ;
+}
