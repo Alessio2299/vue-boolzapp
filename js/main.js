@@ -36,7 +36,7 @@ const app = new Vue({
           date: "09/12/2021",
           time: "23:40:54",
           text: "No ci posso andare più tardi?",
-          status: "sent"
+          status: "received"
         }
       ]
     },
@@ -54,7 +54,7 @@ const app = new Vue({
           date: "13/11/2021",
           time: "01:25:12",
           text: "Tutto bene, tu?",
-          status: "sent"
+          status: "received"
         }
       ]
     },
@@ -73,7 +73,7 @@ const app = new Vue({
           date: "02/02/2022",
           time: "21:17:24",
           text: "Non ho molta voglia",
-          status: "sent"
+          status: "received"
         }
       ]
     }

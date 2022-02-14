@@ -167,12 +167,14 @@ main{
   margin: auto;
   padding-top: 10px;
   height: calc(90vh - 150px);
-  }
-.sent{
+}
+.sent-message{
   text-align: end;
 }
-.sent-message,
-.received-message{
+.sent{
+  background-color: rgb(213, 249,	185);
+}
+.message{
   display: inline-block;
   border-radius: 10px;
   padding: 12px;
@@ -180,10 +182,7 @@ main{
   max-width: 50%;
   word-break: break-word;
 }
-.sent-message{
-  background-color: rgb(213, 249,	185);
-}
-.received-message{
+.received{
   background-color: #fff;
 }
 .time-message{

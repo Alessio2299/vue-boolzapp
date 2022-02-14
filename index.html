@@ -65,19 +65,13 @@
               </div>
             </div>
             <div class="content-main">
-              <div class="content-all-message" v-for="message in contacts[active].messages">
-                <div class="sent">
-                  <div class="sent-message">
-                    {{message.text}}
-                    <div class="time-message">{{message.time}}</div>
+              <div class="content-all-message">
+                <div class="container-message" v-for="(message,index) in contacts[active].messages.length">
+                  <div class="message" :class="contacts[active].messages[index].status == 'sent'? 'sent-message' : '' ">
+                    {{contacts[active].messages[index].text}}
+                    <div class="time-message">{{contacts[active].messages[index].time}}</div>
                   </div>
-                </div>
-                <div class="received">
-                  <div class="received-message">
-                    {{contacts[active].messages[1].text}}
-                    <div class="time-message">{{contacts[active].messages[1].time}}</div>
-                  </div>
-                </div>
+                </div>  
               </div>
             </div>
             <div class="write-message flex">
