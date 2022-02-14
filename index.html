@@ -66,9 +66,10 @@
             </div>
             <div class="content-main">
               <div class="content-all-message">
-                <div class="container-message" v-for="(message,index) in contacts[active].messages.length">
-                  <div class="message" :class="contacts[active].messages[index].status == 'sent'? 'sent-message' : '' ">
+                <div class="container-message" v-for="(message,index) in contacts[active].messages.length" :class="contacts[active].messages[index].status + '-message'">
+                  <div class="message" :class="contacts[active].messages[index].status">
                     {{contacts[active].messages[index].text}}
+                    <i class="fas fa-chevron-down"></i>
                     <div class="time-message">{{contacts[active].messages[index].time}}</div>
                   </div>
                 </div>  
@@ -76,7 +77,7 @@
             </div>
             <div class="write-message flex">
               <i class="far fa-smile"></i>
-              <input type="text" placeholder="Scrivi un messaggio">
+              <input @keyup.enter="addMessage" type="text" v-model="newMessage.text" placeholder="Scrivi un messaggio">
               <i class="fas fa-microphone"></i>
             </div>
           </div>

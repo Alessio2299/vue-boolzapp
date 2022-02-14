@@ -1,6 +1,12 @@
 const app = new Vue({
   el: '#app',
   data: {
+    newMessage: {
+      date: "",
+      time: "",
+      text: "",
+      status: "sent"
+    },
     active: "0",
     contacts: [{
       name: "Michele",
@@ -18,6 +24,18 @@ const app = new Vue({
           time: "15:32:34",
           text: "Si certo",
           status: "received"
+        },
+        {
+          date: "10/01/2020",
+          time: "16:10:42",
+          text: "Ok",
+          status: "sent"
+        },
+        {
+          date: "10/01/2020",
+          time: "16:10:58",
+          text: "A stasera",
+          status: "sent"
         }
       ]
     },
@@ -82,8 +100,13 @@ const app = new Vue({
   methods:{
     selectContact(indice){
       this.active=indice;
-      console.log(this.active);
-      console.log(this.contacts[this.active].messages[1].text);
+    },
+    addMessage(){
+      if(this.newMessage.text == ""){
+      } else{
+        this.contacts[this.active].messages.push(this.newMessage);
+        this.newMessage = {date: "", time: "", text: "", status: "sent"};
+      }
     }
   }
 })
