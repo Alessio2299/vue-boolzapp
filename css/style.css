@@ -16,7 +16,8 @@
   min-width: 400px;
   height: 90%;
   margin: auto;
-  background-color: green ;
+  background-color: green;
+  overflow: hidden;
 }
 aside{
   width: 35%;
@@ -90,6 +91,36 @@ aside img{
   line-height: 20px;
   background-color: #fff;
   color: rgb(160, 160, 160);
+}
+.user-contact span{
+  display: block;
+}
+.user-contact .name-contact{
+  padding-top: 10px;
+}
+.user-contact .message-contact{
+  font-size: 12px;
+  color: rgb(160, 160, 160);
+}
+.contacts{
+  width: 95%;
+  overflow: auto;
+  border-top: 1px solid rgb(244, 243, 243);
+  border-right: 1px solid rgb(244, 243, 243);
+  height: 100%;
+  background-color: #fff;
+} 
+.contacts img{
+  margin-left: 25px;
+}
+.user-contact{
+  position: relative;
+}
+.user-contact .data{
+  font-size: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 main{
   width: 75%;
