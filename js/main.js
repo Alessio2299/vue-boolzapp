@@ -31,6 +31,12 @@ const app = new Vue({
           time: "23:40:12",
           text: "Sei uscito a fare la spesa?",
           status: "sent"
+        },
+        {
+          date: "09/12/2021",
+          time: "23:40:54",
+          text: "No ci posso andare più tardi?",
+          status: "sent"
         }
       ]
     },
@@ -43,6 +49,11 @@ const app = new Vue({
           date: "13/11/2021",
           time: "01:23:31",
           text: "Come stai?",
+          status: "sent"
+        },{
+          date: "13/11/2021",
+          time: "01:25:12",
+          text: "Tutto bene, tu?",
           status: "sent"
         }
       ]
@@ -57,6 +68,12 @@ const app = new Vue({
           time: "21:10:17",
           text: "Ci vediamo oggi?",
           status: "sent"
+        },
+        {
+          date: "02/02/2022",
+          time: "21:17:24",
+          text: "Non ho molta voglia",
+          status: "sent"
         }
       ]
     }
@@ -66,7 +83,7 @@ const app = new Vue({
     selectContact(indice){
       this.active=indice;
       console.log(this.active);
-      console.log(this.contacts[0].messages);
+      console.log(this.contacts[this.active].messages[1].text);
     }
   }
 })

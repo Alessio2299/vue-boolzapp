@@ -41,7 +41,7 @@
               <img :src="contact.avatar" :alt="contact.name">
               <div class="content-contact">
                 <span class="name-contact">{{contact.name}}</span>
-                <span class="last-message">{{contact.messages[0].text}}</span>
+                <span class="last-message">{{contact.messages[1].text}}</span>
                 <span class="data">14/01/2022 12:39:34</span>
               </div>
             </div>
@@ -74,8 +74,8 @@
                 </div>
                 <div class="received">
                   <div class="received-message">
-                    {{message.text}}
-                    <div class="time-message">{{message.time}}</div>
+                    {{contacts[active].messages[1].text}}
+                    <div class="time-message">{{contacts[active].messages[1].time}}</div>
                   </div>
                 </div>
               </div>
