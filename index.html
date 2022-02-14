@@ -37,35 +37,11 @@
             <input type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <div class="contacts">
-            <div class="user-contact flex">
-              <img src="./img/avatar_1.jpg" alt="Contact">
+            <div class="user-contact flex" @click="selectContact(index)" v-for="(contact,index) in contacts">
+              <img :src="contact.avatar" :alt="contact.name">
               <div class="content-contact">
-                <span class="name-contact">Michele</span>
-                <span class="last-message">Perfetto tutto fatto!</span>
-                <span class="data">14/01/2022 12:39:34</span>
-              </div>
-            </div>
-            <div class="user-contact flex">
-              <img src="./img/avatar_5.jpg" alt="Contact">
-              <div class="content-contact">
-                <span class="name-contact">Fabio</span>
-                <span class="last-message">Mi piacerebbe ma devo...</span>
-                <span class="data">14/01/2022 12:39:34</span>
-              </div>
-            </div>
-            <div class="user-contact flex">
-              <img src="./img/avatar_4.jpg" alt="Contact">
-              <div class="content-contact">
-                <span class="name-contact">Samuele</span>
-                <span class="last-message">Ah scusa!</span>
-                <span class="data">14/01/2022 12:39:34</span>
-              </div>
-            </div>
-            <div class="user-contact flex">
-              <img src="./img/avatar_6.jpg" alt="Contact">
-              <div class="content-contact">
-                <span class="name-contact">Luisa</span>
-                <span class="last-message">Si ma preferirei andare..</span>
+                <span class="name-contact">{{contact.name}}</span>
+                <span class="last-message">{{contact.messages[0].text}}</span>
                 <span class="data">14/01/2022 12:39:34</span>
               </div>
             </div>
@@ -75,11 +51,11 @@
           <div class="all-messages">
             <div class="contact flex">
               <div class="profile flex">
-                <img src="./img/avatar_1.jpg" alt="Contact">
+                <img :src="contacts[active].avatar" alt="contacts[active].name">
                 <div class="info flex">
-                  <span class="name-contact">Michele</span>
-                  <span class="last-access">Ultimo accesso: 14/02/2022</span>
-                  <span class="time">16:30</span>
+                  <span class="name-contact">{{contacts[active].name}}</span>
+                  <span class="last-access">{{contacts[active].messages[0].date}}</span>
+                  <span class="time">{{contacts[active].messages[0].time}}</span>
               </div>
                 </div>
               <div class="tools-message">
@@ -89,17 +65,17 @@
               </div>
             </div>
             <div class="content-main">
-              <div class="content-all-message">
+              <div class="content-all-message" v-for="message in contacts[active].messages">
                 <div class="sent">
                   <div class="sent-message">
-                    <span>CiaoCia</span>
-                    <div class="time-message">14:32</div>
+                    {{message.text}}
+                    <div class="time-message">{{message.time}}</div>
                   </div>
                 </div>
                 <div class="received">
                   <div class="received-message">
-                    Ciacioaio
-                    <div class="time-message">14:32</div>
+                    {{message.text}}
+                    <div class="time-message">{{message.time}}</div>
                   </div>
                 </div>
               </div>

@@ -160,6 +160,7 @@ main{
 .content-main{
   background-image: url("../img/mine.jpg");
   height: calc(90vh - 150px);
+  overflow-y: auto;
 }
 .content-all-message{
   width: 80%;
