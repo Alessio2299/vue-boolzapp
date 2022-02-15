@@ -46,6 +46,29 @@ aside img{
 .tools-user{
   width: 35%;
   justify-content: space-around;
+  position: relative;
+}
+.fa-ellipsis-v{
+  cursor: pointer;
+}
+.sub-menu-user{
+  line-height: 30px;
+  position: absolute;
+  width: 150px;
+  background-color: #fff;
+  padding: 3px 0;
+  right: 15px;
+  top: 30px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px #000;
+  cursor: pointer;
+}
+.sub-menu-user span{
+  padding: 5px;
+  cursor: pointer;
+}
+.sub-menu-user span:hover{
+  background-color: rgb(231, 231, 231);
 }
 .tools-user i{
  font-size: 25px;
@@ -76,6 +99,14 @@ aside img{
 .link-active{
   color: rgb(160, 160, 160);
   text-decoration: underline;
+  cursor: pointer;
+}
+.link-active:hover{
+  color: rgb(59, 90, 104);
+}
+.container i:hover{
+  color: gray;
+  cursor: pointer;
 }
 .searchbar{
   width: 90%;
@@ -193,6 +224,7 @@ main{
   top: 5px;
   color: rgb(160, 160, 160);
   display: none;
+  cursor: pointer;  
 }
 .message:hover i{
   display: block;

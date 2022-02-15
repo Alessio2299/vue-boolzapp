@@ -1,6 +1,13 @@
 const app = new Vue({
   el: '#app',
   data: {
+    changeNameUser:[
+      {
+        name:"",
+        submenu: false
+      }
+    ],
+    userName: "Nome Utente",
     actualMessage: "",
     searchName: "",
     contactsSearch: [],
@@ -143,7 +150,7 @@ const app = new Vue({
         } 
       })
     },
-    open(indice){
+    openSubMenuMessage(indice){
       this.actualMessage = indice;
       if(this.contacts[this.active].messages[indice].info == false){
         this.contacts[this.active].messages[indice].info = true;
@@ -156,7 +163,25 @@ const app = new Vue({
       if(this.contacts[this.active].messages.length > 1){
         this.contacts[this.active].messages.splice(indice,1);
       }
-      
+    },
+    openSubMenuUser(){
+      if(this.changeNameUser[0].submenu == true){
+        this.changeNameUser[0].submenu = false;
+      } else {
+        this.changeNameUser[0].submenu = true;
+      }
+    },
+    clickChange(){
+      console.log(this.userName)
+      let name = prompt("Inserisci il tuo nome utente..");
+      this.userName = name.charAt(0).toUpperCase() + name.slice(1);
+      this.changeNameUser[0].submenu = false;
+    },
+    closeSubMenuMessage(indice){
+      this.contacts[this.active].messages[indice].info = false;
+    },
+    closeSubMenuUser(){
+      this.changeNameUser[0].submenu = false;
     }
   }
 })

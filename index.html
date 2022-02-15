@@ -12,15 +12,18 @@
     <div id="app" class="flex">
       <div class="container flex">
         <aside>
-          <div class="user flex">
+          <div @mouseleave="closeSubMenuUser" class="user flex">
             <div class="name-user flex">
               <img src="./img/avatar_2.jpg" alt="Sfondo User">
-              <span>Nome Utente</span>
+              <span>{{userName}}</span>
             </div>
             <div class="tools-user flex">
               <i class="fas fa-circle-notch"></i>
               <i class="fas fa-comment-alt"></i>
-              <i class="fas fa-ellipsis-v"></i>
+              <i @click="openSubMenuUser" class="fas fa-ellipsis-v"></i>
+              <div v-if="changeNameUser[0].submenu == true" class="sub-menu-user">
+                <span @click="clickChange">Cambia Nome Utente</span>
+              </div>
             </div>
           </div>
           <div class="active-notification flex">
@@ -67,10 +70,10 @@
             <div class="content-main">
               <div class="content-all-message">
                 <div class="container-message" v-for="(message,index) in contacts[active].messages.length" :class="contacts[active].messages[index].status + '-message'">
-                  <div class="message" :class="contacts[active].messages[index].status">
+                  <div class="message" @mouseleave="closeSubMenuMessage(index)" :class="contacts[active].messages[index].status">
                     {{contacts[active].messages[index].text}}
                     <div class="time-message">{{contacts[active].messages[index].time}}</div>
-                    <i @click="open(index)" class="fas fa-chevron-down"></i>
+                    <i @click="openSubMenuMessage(index)" class="fas fa-chevron-down"></i>
                     <div class="sub-menu flex" v-if="contacts[active].messages[index].info == true">
                       <span>Info Messaggio</span>
                       <span @click="remove(index)">Elimina Messaggio</span>
