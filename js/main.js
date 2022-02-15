@@ -139,7 +139,8 @@ const app = new Vue({
       }
     },
     selectLastMessage(indice){
-      return this.contacts[indice].messages.length -1;
+      console.log(this.contacts[indice].messages.length-1);
+      return this.contacts[indice].messages.length-1;
     },
     search(){ 
       this.contacts.forEach((element) => {

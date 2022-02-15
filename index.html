@@ -84,7 +84,7 @@
             </div>
             <div class="write-message flex">
               <i class="far fa-smile"></i>
-              <input @keyup.enter="addMessage(); selectLastMessage();" type="text" v-model="newMessage" placeholder="Scrivi un messaggio">
+              <input @keyup.enter="addMessage" type="text" v-model="newMessage" placeholder="Scrivi un messaggio">
               <i class="fas fa-microphone"></i>
             </div>
           </div>
