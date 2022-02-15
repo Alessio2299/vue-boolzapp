@@ -37,7 +37,7 @@
             <input type="text" @keyup.enter="search()" v-model="searchName" placeholder="Cerca o inizia una nuova chat">
           </div>
           <div class="contacts">
-            <div class="user-contact flex" @click="selectContact(index)" v-for="(contact,index) in contactsSearch" :style="contact.visible == false ? 'display: none' : 'display: flex'">
+            <div class="user-contact flex" @click="selectContact(index)" v-for="(contact,index) in contacts" :style="contact.visible == false ? 'display: none' : 'display: flex'">
               <img :src="contact.avatar" :alt="contact.name">
               <div class="content-contact">
                 <span class="name-contact">{{contact.name}}</span>
@@ -69,15 +69,19 @@
                 <div class="container-message" v-for="(message,index) in contacts[active].messages.length" :class="contacts[active].messages[index].status + '-message'">
                   <div class="message" :class="contacts[active].messages[index].status">
                     {{contacts[active].messages[index].text}}
-                    <i class="fas fa-chevron-down"></i>
                     <div class="time-message">{{contacts[active].messages[index].time}}</div>
+                    <i @click="open(index)" class="fas fa-chevron-down"></i>
+                    <div class="sub-menu flex" v-if="contacts[active].messages[index].info == true">
+                      <span>Info Messaggio</span>
+                      <span @click="remove(index)">Elimina Messaggio</span>
+                    </div>
                   </div>
                 </div>  
               </div>
             </div>
             <div class="write-message flex">
               <i class="far fa-smile"></i>
-              <input @keyup.enter="addMessage(); selectLastMessage();" type="text" v-model="newMessage.text" placeholder="Scrivi un messaggio">
+              <input @keyup.enter="addMessage(); selectLastMessage();" type="text" v-model="newMessage" placeholder="Scrivi un messaggio">
               <i class="fas fa-microphone"></i>
             </div>
           </div>

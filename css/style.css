@@ -200,6 +200,32 @@ main{
 .received{
   background-color: #fff;
 }
+.message .sub-menu{
+  border-radius: 2px;
+  line-height: 19px;
+  position: absolute;
+  width: 130px;
+  top: 17px;
+  flex-direction: column;
+  font-size: 15px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #000;
+  z-index: 1;
+}
+.message .sub-menu span{
+  padding: 6px;
+}
+.message .sub-menu span:hover{
+  background-color: rgb(230, 230, 230);
+  cursor: pointer;
+}
+.sent .sub-menu{
+  right: 10px;
+  text-align: start;
+}
+.received .sub-menu{
+  left: 80%;
+}
 .time-message{
   color: rgb(160, 160, 160);
   position: absolute;
@@ -224,5 +250,4 @@ main{
   font-size: 30px;
   color: rgb(160, 160, 160);
 }
-
 /* End Main */
