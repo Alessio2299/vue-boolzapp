@@ -34,10 +34,10 @@
           </div>
           <div class="searchbar flex">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" @keyup.enter="search()" v-model="searchName" placeholder="Cerca o inizia una nuova chat">
           </div>
           <div class="contacts">
-            <div class="user-contact flex" @click="selectContact(index)" v-for="(contact,index) in contacts">
+            <div class="user-contact flex" @click="selectContact(index)" v-for="(contact,index) in contactsSearch" :style="contact.visible == false ? 'display: none' : 'display: flex'">
               <img :src="contact.avatar" :alt="contact.name">
               <div class="content-contact">
                 <span class="name-contact">{{contact.name}}</span>

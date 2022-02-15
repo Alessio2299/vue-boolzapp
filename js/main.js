@@ -1,9 +1,9 @@
 const app = new Vue({
   el: '#app',
   data: {
+    searchName: "",
+    contactsSearch: [],
     lastMessage: "",
-    hours: dayjs().format('H:mm:ss'),
-    day: dayjs().format('D-MM-YYYY'),
     newReceivedMessage:{
       date: dayjs().format('D-MM-YYYY'),
       time: dayjs().format('H:mm:ss'),
@@ -114,16 +114,27 @@ const app = new Vue({
       if(this.newMessage.text == ""){
       } else{
         this.contacts[this.active].messages.push(this.newMessage);
-        this.newMessage = {date: this.day, time: this.hours, text: "", status: "sent"};
+        this.newMessage = {date: dayjs().format('D-MM-YYYY') , time: dayjs().format('H:mm:ss'), text: "", status: "sent"};
         setTimeout(() => {
           this.contacts[this.active].messages.push(this.newReceivedMessage);
-          this.newReceivedMessage = {date: this.day, time: this.hours, text: "ok", status: "received"}
+          this.newReceivedMessage = {date: dayjs().format('D-MM-YYYY'), time: dayjs().format('H:mm:ss'), text: "ok", status: "received"};
         }, 1000);
       }
 
     },
     selectLastMessage(indice){
       return this.contacts[indice].messages.length - 1;
+    },
+    search(){ 
+      this.contactsSearch = this.contacts.filter(object => {
+        if(!object.name.includes(this.searchName)){ 
+          object.visible = false;
+        }else{
+          object.visible = true;
+        }
+        console.log(object.visible)
+        return object.visible
+      })
     }
   }
 })
