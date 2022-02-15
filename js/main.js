@@ -1,9 +1,18 @@
 const app = new Vue({
   el: '#app',
   data: {
+    lastMessage: "",
+    hours: dayjs().format('H:mm:ss'),
+    day: dayjs().format('D-MM-YYYY'),
+    newReceivedMessage:{
+      date: dayjs().format('D-MM-YYYY'),
+      time: dayjs().format('H:mm:ss'),
+      text: "ok",
+      status: "received"
+    },
     newMessage: {
-      date: "",
-      time: "",
+      date: dayjs().format('D-MM-YYYY'),
+      time: dayjs().format('H:mm:ss'),
       text: "",
       status: "sent"
     },
@@ -105,8 +114,16 @@ const app = new Vue({
       if(this.newMessage.text == ""){
       } else{
         this.contacts[this.active].messages.push(this.newMessage);
-        this.newMessage = {date: "", time: "", text: "", status: "sent"};
+        this.newMessage = {date: this.day, time: this.hours, text: "", status: "sent"};
+        setTimeout(() => {
+          this.contacts[this.active].messages.push(this.newReceivedMessage);
+          this.newReceivedMessage = {date: this.day, time: this.hours, text: "ok", status: "received"}
+        }, 1000);
       }
+
+    },
+    selectLastMessage(indice){
+      return this.contacts[indice].messages.length - 1;
     }
   }
 })
