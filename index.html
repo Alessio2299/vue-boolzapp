@@ -85,7 +85,7 @@
             <div class="write-message flex">
               <i class="fas fa-times" :style="iconsActive == true ? 'display: block' : 'display: none' " @click="openListEmoji"></i>
               <i class="far fa-smile" :style="iconsActive == true ? 'display: none' : 'display: block'" @click="openListEmoji"></i>
-              <input @keyup.enter="addMessage" type="text" v-model="newMessage" placeholder="Scrivi un messaggio">
+              <input @keyup.enter="addMessage" type="text" v-model="newMessage" placeholder="Scrivi un messaggio" value="emoji">
               <i class="fas fa-microphone"></i>
               <div class="list-emoticon" v-if="iconsActive == true">
                 <div class="search-emoji">

@@ -68,6 +68,8 @@ aside img{
 .sub-menu-user span{
   padding: 5px;
   cursor: pointer;
+  width: 100%;
+  display: block;
 }
 .sub-menu-user span:hover{
   background-color: rgb(231, 231, 231);
