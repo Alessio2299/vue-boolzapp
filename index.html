@@ -71,7 +71,7 @@
               <div class="content-all-message">
                 <div class="container-message" v-for="(message,index) in contacts[active].messages.length" :class="contacts[active].messages[index].status + '-message'">
                   <div class="message" @mouseleave="closeSubMenuMessage(index)" :class="contacts[active].messages[index].status">
-                    {{contacts[active].messages[index].text}}
+                    <span>{{contacts[active].messages[index].text}}</span>
                     <div class="time-message">{{contacts[active].messages[index].time}}</div>
                     <i @click="openSubMenuMessage(index)" class="fas fa-chevron-down"></i>
                     <div class="sub-menu flex" v-if="contacts[active].messages[index].info == true">
@@ -85,8 +85,14 @@
             <div class="write-message flex">
               <i class="fas fa-times" :style="iconsActive == true ? 'display: block' : 'display: none' " @click="openListEmoji"></i>
               <i class="far fa-smile" :style="iconsActive == true ? 'display: none' : 'display: block'" @click="openListEmoji"></i>
-              <input @keyup.enter="addMessage" type="text" v-model="newMessage" placeholder="Scrivi un messaggio" value="emoji">
-              <i class="fas fa-microphone"></i>
+              <input @keyup.enter="addMessage" type="text" v-model="newMessage"  placeholder="Scrivi un messaggio">
+              <i class="fas fa-paper-plane" v-if="newMessage != ''"></i>
+              <i @click="timer" class="fas fa-microphone" v-if="newMessage == ''" :style="toRecord.active == true ? 'color:darkred' : ''"></i>
+              <div class="to-record flex" v-if="toRecord.active == true">
+                <i class="fas fa-caret-down"></i>
+                <i class="fas fa-dot-circle"></i>
+                <span>{{toRecord.minutes}} : {{toRecord.seconds}}</span>
+              </div>
               <div class="list-emoticon" v-if="iconsActive == true">
                 <div class="search-emoji">
                   <input @keyup="searchEmoji" v-model="searchEmoticon" type="text" placeholder="Search emoji">

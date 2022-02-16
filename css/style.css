@@ -329,4 +329,38 @@ main{
   border-radius: 5px;
   padding: 10px;
 }
+.fa-paper-plane{
+  transform: rotate(20deg);
+}
+.to-record{
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  bottom: 117%;
+  right: 25px;
+  background-color: rgb(234, 234,	234);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.to-record span{
+  font-size: 20px;
+  margin-left: 15px;
+}
+.to-record .fa-dot-circle{
+  color: red;
+}
+.to-record .fa-caret-down:hover{
+  color: rgb(234, 234, 234);
+}
+.to-record .fa-dot-circle:hover{
+  color: red;
+  cursor: auto;
+}
+.to-record .fa-caret-down{
+  position: absolute;
+  top: 73%;
+  right: 3px;
+  color: rgb(234, 234,	234);
+}
 /* End Main */

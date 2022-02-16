@@ -7,15 +7,20 @@ const app = new Vue({
         submenu: false
       }
     ],
-    emoji: "&#x1F525;",
+    toRecord:{
+      minutes: 0,
+      seconds: 0,
+      active: false
+    },
     userName: "Nome Utente",
     actualMessage: "",
     searchName: "",
     searchEmoticon: "",
-      lastMessage: "",
+    lastMessage: "",
     newMessage: "",
     active: "0",
     iconsActive: false,
+    time: "",
     icons:[
       {
         name: 'grin-tongue',
@@ -362,6 +367,25 @@ const app = new Vue({
           element.visible = true;
         } 
       })
-    }
+    },
+    timer(){
+      console.log(this.toRecord.active)
+      if(this.toRecord.active == false){
+        this.toRecord.active = true
+        if(this.toRecord.active == true){
+          this.time = setInterval(() => {
+          if(this.toRecord.seconds == 60){
+            this.toRecord.seconds = 0;
+            this.toRecord.minutes++;
+          }
+          this.toRecord.seconds++;
+        }, 1000);}
+      } else{
+        this.toRecord.active = false
+        this.toRecord.seconds = 0;
+        this.toRecord.minutes = 0;
+        clearInterval(this.time)
+      }
+    },
   }
 })
