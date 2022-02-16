@@ -37,7 +37,7 @@
           </div>
           <div class="searchbar flex">
             <i class="fas fa-search"></i>
-            <input type="text" @keyup.enter="search()" v-model="searchName" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" @keyup="search()" v-model="searchName" placeholder="Cerca o inizia una nuova chat">
           </div>
           <div class="contacts">
             <div class="user-contact flex" @click="selectContact(index)" v-for="(contact,index) in contacts" :style="contact.visible == false ? 'display: none' : 'display: flex'">
@@ -83,9 +83,16 @@
               </div>
             </div>
             <div class="write-message flex">
-              <i class="far fa-smile"></i>
+              <i class="fas fa-times" :style="iconsActive == true ? 'display: block' : 'display: none' " @click="openListEmoji"></i>
+              <i class="far fa-smile" :style="iconsActive == true ? 'display: none' : 'display: block'" @click="openListEmoji"></i>
               <input @keyup.enter="addMessage" type="text" v-model="newMessage" placeholder="Scrivi un messaggio">
               <i class="fas fa-microphone"></i>
+              <div class="list-emoticon" v-if="iconsActive == true">
+                <div class="search-emoji">
+                  <input @keyup="searchEmoji" v-model="searchEmoticon" type="text" placeholder="Search emoji">
+                </div>
+                <span  v-for="emoji in icons" :style="emoji.visible == true ? 'display: inline-block' : 'display: none'"><i :class="`${emoji.family} ${emoji.prefix}${emoji.name}`"></i></span>
+              </div>
             </div>
           </div>
         </main>

@@ -7,13 +7,178 @@ const app = new Vue({
         submenu: false
       }
     ],
+    emoji: "&#x1F525;",
     userName: "Nome Utente",
     actualMessage: "",
     searchName: "",
-    contactsSearch: [],
-    lastMessage: "",
+    searchEmoticon: "",
+      lastMessage: "",
     newMessage: "",
     active: "0",
+    iconsActive: false,
+    icons:[
+      {
+        name: 'grin-tongue',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin-tears',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'kiss-wink-heart',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'kiss',
+        visible: true
+      },
+      {
+        name: 'meh-rolling-eyes',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'perplexed',
+        visible: true
+      },
+      {
+        name: 'angry',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'angry',
+        visible: true
+      },
+      {
+        name: 'dizzy',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'dead',
+        visible: true
+      },
+      {
+        name: 'flushed',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'amazed',
+        visible: true
+      },
+      {
+        name: 'frown',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'sad',
+        visible: true
+      },
+      {
+        name: 'grimace',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin-beam',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin-alt',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin-hearts',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'love',
+        visible: true
+      },
+      {
+        name: 'grin-squint',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin-squint-tears',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'grin-tongue-wink',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'kiss',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'kiss',
+        visible: true
+      },
+      {
+        name: 'laugh',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'laugh-beam',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'meh',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'amazed',
+        visible: true
+      },
+      {
+        name: 'sad-tear',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'sad',
+        visible: true
+      },
+      {
+        name: 'smile',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'smile',
+        visible: true
+      },
+      {
+        name: 'surprise',
+        prefix: 'fa-',
+        family: 'fas',
+        category: 'surprise',
+        visible: true
+      },
+    ],
     contacts: [{
       name: "Michele",
       avatar: "./img/avatar_1.jpg",
@@ -139,7 +304,7 @@ const app = new Vue({
       }
     },
     selectLastMessage(indice){
-      console.log(this.contacts[indice].messages.length-1);
+      
       return this.contacts[indice].messages.length-1;
     },
     search(){ 
@@ -160,7 +325,6 @@ const app = new Vue({
       }
     },
     remove(indice){
-      console.log(this.contacts[this.active].messages.length);
       if(this.contacts[this.active].messages.length > 1){
         this.contacts[this.active].messages.splice(indice,1);
       }
@@ -173,7 +337,6 @@ const app = new Vue({
       }
     },
     clickChange(){
-      console.log(this.userName)
       let name = prompt("Inserisci il tuo nome utente..");
       this.userName = name.charAt(0).toUpperCase() + name.slice(1);
       this.changeNameUser[0].submenu = false;
@@ -183,6 +346,22 @@ const app = new Vue({
     },
     closeSubMenuUser(){
       this.changeNameUser[0].submenu = false;
+    },
+    openListEmoji(){
+      if(this.iconsActive == true){
+        this.iconsActive = false;
+      } else {
+        this.iconsActive = true;
+      }
+    },
+    searchEmoji(){ 
+      this.icons.forEach((element) => {
+        if(!element.category.includes(this.searchEmoticon.toLowerCase())){ 
+          element.visible = false;  
+        }else{
+          element.visible = true;
+        } 
+      })
     }
   }
 })
