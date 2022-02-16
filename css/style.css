@@ -334,7 +334,7 @@ main{
 }
 .to-record{
   position: absolute;
-  width: 150px;
+  width: 120px;
   height: 50px;
   bottom: 117%;
   right: 25px;
@@ -342,25 +342,28 @@ main{
   border-radius: 5px;
   justify-content: center;
   align-items: center;
+  box-shadow: 1px 1px 5px rgba(133, 133, 133, 0.623);
 }
 .to-record span{
   font-size: 20px;
   margin-left: 15px;
 }
-.to-record .fa-dot-circle{
+.to-record .fa-pause-circle,
+.to-record .fa-play-circle{
   color: red;
 }
 .to-record .fa-caret-down:hover{
   color: rgb(234, 234, 234);
 }
-.to-record .fa-dot-circle:hover{
-  color: red;
-  cursor: auto;
+.to-record .fa-pause-circle:hover,
+.to-record .fa-play-circle:hover{
+  color: darkred;
 }
 .to-record .fa-caret-down{
   position: absolute;
-  top: 73%;
+  top: 71%;
   right: 3px;
   color: rgb(234, 234,	234);
+
 }
 /* End Main */

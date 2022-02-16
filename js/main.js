@@ -21,6 +21,7 @@ const app = new Vue({
     active: "0",
     iconsActive: false,
     time: "",
+    pause: true,
     icons:[
       {
         name: 'grin-tongue',
@@ -369,7 +370,6 @@ const app = new Vue({
       })
     },
     timer(){
-      console.log(this.toRecord.active)
       if(this.toRecord.active == false){
         this.toRecord.active = true
         if(this.toRecord.active == true){
@@ -384,8 +384,22 @@ const app = new Vue({
         this.toRecord.active = false
         this.toRecord.seconds = 0;
         this.toRecord.minutes = 0;
-        clearInterval(this.time)
+        clearInterval(this.time);
       }
     },
+    stopTimer(){
+      this.pause = false;
+      clearInterval(this.time);
+    },
+    resumeTimer(){
+      this.time = setInterval(() => {
+      if(this.toRecord.seconds == 60){
+        this.toRecord.seconds = 0;
+        this.toRecord.minutes++;
+      }
+      this.toRecord.seconds++;
+      }, 1000);
+      this.pause = true;
+    }
   }
 })

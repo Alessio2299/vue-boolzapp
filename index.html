@@ -87,10 +87,11 @@
               <i class="far fa-smile" :style="iconsActive == true ? 'display: none' : 'display: block'" @click="openListEmoji"></i>
               <input @keyup.enter="addMessage" type="text" v-model="newMessage"  placeholder="Scrivi un messaggio">
               <i class="fas fa-paper-plane" v-if="newMessage != ''"></i>
-              <i @click="timer" class="fas fa-microphone" v-if="newMessage == ''" :style="toRecord.active == true ? 'color:darkred' : ''"></i>
+              <i @click="timer" class="fas fa-microphone" v-if="newMessage == ''" :style="toRecord.active == true ? 'color:red' : ''"></i>
               <div class="to-record flex" v-if="toRecord.active == true">
                 <i class="fas fa-caret-down"></i>
-                <i class="fas fa-dot-circle"></i>
+                <i v-if="pause == true" class="fas fa-pause-circle" @click="stopTimer"></i>
+                <i v-if="pause == false" class="fas fa-play-circle" @click="resumeTimer"></i>
                 <span>{{toRecord.minutes}} : {{toRecord.seconds}}</span>
               </div>
               <div class="list-emoticon" v-if="iconsActive == true">
