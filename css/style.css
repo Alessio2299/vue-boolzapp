@@ -21,6 +21,8 @@
   margin: auto;  
   overflow: hidden;
 }
+/* End Common Command*/
+
 /* Start Aside */
 aside{
   width: 35%;
@@ -31,6 +33,7 @@ aside img{
   border-radius: 50%;
   margin: 10px;
 }
+/* Section Info User */
 .user{
   background-color: rgb(234, 234,	234);
   align-items: center;
@@ -41,9 +44,14 @@ aside img{
 .name-user{
   align-items: center;
 }
-.name-user span{
+.name{
   font-size: 15px;
   font-weight: bold;
+}
+.status{
+  font-size: 13px;
+  display: block;
+  color: rgb(160, 160, 160);
 }
 .tools-user{
   width: 35%;
@@ -79,6 +87,7 @@ aside img{
  margin-right: 5%;
  color: rgb(178,	177,	177);
 }
+/* Section Notification */
 .active-notification{
   height: 80px;
   align-items: center;
@@ -112,6 +121,7 @@ aside img{
   color: gray;
   cursor: pointer;
 }
+/* Section All Contacts */
 .searchbar{
   width: 90%;
   margin: 10px auto;
@@ -173,6 +183,7 @@ aside img{
 main{
   width: 75%;
 }
+/* Section Info Contact */
 .contact{
   height: 70px;
   align-items: center;
@@ -198,6 +209,7 @@ main{
   margin-right: 10px;
   color: rgb(160, 160, 160);
 }
+/* Section Print All Messages for the active Contact */
 .content-main{
   background-image: url("../img/mine.jpg");
   height: calc(90vh - 150px);
@@ -273,6 +285,7 @@ main{
   bottom: 2px;
   right: 5px;
 }
+/* Section To write the message and select emoji or to send an audio */
 .write-message{
   height: 80px;
   background-color: rgb(234, 234,	234);
@@ -330,7 +343,7 @@ main{
   padding: 10px;
 }
 .fa-paper-plane{
-  transform: rotate(20deg);
+  transform: rotate(45deg);
 }
 .to-record{
   position: absolute;

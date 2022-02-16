@@ -18,7 +18,7 @@ const app = new Vue({
     searchEmoticon: "",
     lastMessage: "",
     newMessage: "",
-    active: "0",
+    active: 0,
     iconsActive: false,
     time: "",
     pause: true,

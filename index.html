@@ -11,11 +11,16 @@
   <body>
     <div id="app" class="flex">
       <div class="container flex">
+        <!-- Left side, where we find a section with the user's profile, a part where the warning is contained
+        to turn off notifications, and last section where we find all contact -->
         <aside>
           <div @mouseleave="closeSubMenuUser" class="user flex">
             <div class="name-user flex">
               <img src="./img/avatar_2.jpg" alt="Sfondo User">
-              <span>{{userName}}</span>
+              <div info-user>
+                <span class="name">{{userName}}</span>
+                <span class="status">Online</span>
+              </div>  
             </div>
             <div class="tools-user flex">
               <i class="fas fa-circle-notch"></i>
@@ -50,6 +55,8 @@
             </div>
           </div>
         </aside>
+        <!-- The Main contains the single profile clicked with the relative messages, and in the lower part we find the input to send the messages,
+        the emojis, and the microphone -->
         <main>
           <div class="all-messages">
             <div class="contact flex">
@@ -86,7 +93,7 @@
               <i class="fas fa-times" :style="iconsActive == true ? 'display: block' : 'display: none' " @click="openListEmoji"></i>
               <i class="far fa-smile" :style="iconsActive == true ? 'display: none' : 'display: block'" @click="openListEmoji"></i>
               <input @keyup.enter="addMessage" type="text" v-model="newMessage"  placeholder="Scrivi un messaggio">
-              <i class="fas fa-paper-plane" v-if="newMessage != ''"></i>
+              <i @click="addMessage" class="fas fa-paper-plane" v-if="newMessage != ''"></i>
               <i @click="timer" class="fas fa-microphone" v-if="newMessage == ''" :style="toRecord.active == true ? 'color:red' : ''"></i>
               <div class="to-record flex" v-if="toRecord.active == true">
                 <i class="fas fa-caret-down"></i>
