@@ -28,6 +28,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😛',
         visible: true
       },
       {
@@ -35,6 +36,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😂',
         visible: true
       },
       {
@@ -42,6 +44,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'kiss',
+        emoji: '😘',
         visible: true
       },
       {
@@ -49,6 +52,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'perplexed',
+        emoji: '🙄',
         visible: true
       },
       {
@@ -56,6 +60,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'angry',
+        emoji: '😡',
         visible: true
       },
       {
@@ -63,6 +68,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'dead',
+        emoji: '😵',
         visible: true
       },
       {
@@ -70,6 +76,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'amazed',
+        emoji: '😳',
         visible: true
       },
       {
@@ -77,6 +84,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'sad',
+        emoji: '🙁',
         visible: true
       },
       {
@@ -84,6 +92,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😬',
         visible: true
       },
       {
@@ -91,6 +100,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '🙂',
         visible: true
       },
       {
@@ -98,6 +108,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😄',
         visible: true
       },
       {
@@ -105,6 +116,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😃',
         visible: true
       },
       {
@@ -112,6 +124,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'love',
+        emoji: '😳',
         visible: true
       },
       {
@@ -119,6 +132,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😍',
         visible: true
       },
       {
@@ -126,6 +140,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '🤣',
         visible: true
       },
       {
@@ -133,6 +148,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😜',
         visible: true
       },
       {
@@ -140,6 +156,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'kiss',
+        emoji: '😗',
         visible: true
       },
       {
@@ -147,6 +164,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😆',
         visible: true
       },
       {
@@ -154,6 +172,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '😄',
         visible: true
       },
       {
@@ -161,6 +180,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'amazed',
+        emoji: '😐',
         visible: true
       },
       {
@@ -168,6 +188,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'sad',
+        emoji: '😢',
         visible: true
       },
       {
@@ -175,6 +196,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'smile',
+        emoji: '🙂',
         visible: true
       },
       {
@@ -182,6 +204,7 @@ const app = new Vue({
         prefix: 'fa-',
         family: 'fas',
         category: 'surprise',
+        emoji: '😮',
         visible: true
       },
     ],
@@ -400,6 +423,9 @@ const app = new Vue({
       this.toRecord.seconds++;
       }, 1000);
       this.pause = true;
+    },
+    addEmoji(text){
+      this.newMessage += text
     }
   }
 })

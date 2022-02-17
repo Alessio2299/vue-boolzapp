@@ -105,7 +105,7 @@
                 <div class="search-emoji">
                   <input @keyup="searchEmoji" v-model="searchEmoticon" type="text" placeholder="Search emoji">
                 </div>
-                <span  v-for="emoji in icons" :style="emoji.visible == true ? 'display: inline-block' : 'display: none'"><i :class="`${emoji.family} ${emoji.prefix}${emoji.name}`"></i></span>
+                <span @click="addEmoji(emoji.emoji)" v-for="emoji in icons" :style="emoji.visible == true ? 'display: inline-block' : 'display: none'"><i :class="`${emoji.family} ${emoji.prefix}${emoji.name}`"></i></span>
               </div>
             </div>
           </div>
